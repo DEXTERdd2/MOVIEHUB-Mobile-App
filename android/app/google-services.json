@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "303450602960",
+    "project_id": "movielab-f453c",
+    "storage_bucket": "movielab-f453c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303450602960:android:b811024f9c7c1e0efa0dd5",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303450602960-r57p94ve2biodvcni0tiqdk5r77ev54m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtAO7PuuHtnucPPkiQ2rnMLiFsgvHY5QQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303450602960-r57p94ve2biodvcni0tiqdk5r77ev54m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
