@@ -21,7 +21,9 @@ class HomeScreen extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
+        backgroundColor: Colors.black,
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.black,
           currentIndex: selectedPage,
           onTap: (int index) {
             setState(() {
@@ -39,17 +41,18 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         drawer: Drawer(
+          backgroundColor: Colors.black,
           child: ListView(
             // Important: Remove any padding from the ListView.
             padding: EdgeInsets.zero,
             children: [
               const DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: const Color.fromARGB(239, 230, 7, 7),
                 ),
                 child: Text(
                   'MOVIEHUB',
-                  style: TextStyle(fontSize: 50, fontStyle: FontStyle.italic),
+                  style: TextStyle(fontSize: 50,),
                 ),
               ),
               ListTile(
@@ -109,8 +112,13 @@ class HomeScreen extends StatelessWidget {
 
         ),
         appBar: AppBar(
-          backgroundColor: Colors.grey.shade400,
-          toolbarHeight: 70,
+          backgroundColor: Colors.black,
+          toolbarHeight: 80,
+          flexibleSpace: FlexibleSpaceBar(
+            background: Image(
+              image: AssetImage('images/qw.png'),
+            ),
+          ),
           elevation: 14,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -118,7 +126,11 @@ class HomeScreen extends StatelessWidget {
                   bottomLeft: Radius.circular(100))),
           title: const Center(
             child: Text(
-              'MOVIELAB',
+              'MOVIELAB',style: TextStyle(
+                color: const Color.fromARGB(239, 230, 7, 7),
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            ),
             ),
           ),
           actions: [
@@ -131,12 +143,12 @@ class HomeScreen extends StatelessWidget {
                     decoration: const BoxDecoration(
                         boxShadow: [
                           BoxShadow(
-                              blurRadius: 7,
-                              spreadRadius: 3,
+                              blurRadius: 0,
+                              spreadRadius: 0,
                               color: Colors.transparent)
                         ],
                         shape: BoxShape.circle,
-                        color: Color.fromARGB(255, 36, 34, 35)),
+                        color: Colors.transparent),
                     child: IconButton(
                       onPressed: () {},
                       icon: customIcon,
@@ -149,10 +161,7 @@ class HomeScreen extends StatelessWidget {
                   width: 40,
                   alignment: Alignment.center,
                   // ignore: prefer_const_literals_to_create_immutables
-                  decoration: BoxDecoration(boxShadow: [
-                    const BoxShadow(
-                        blurRadius: 7, spreadRadius: 3, color: Colors.pink)
-                  ], shape: BoxShape.circle, color: Colors.pink.shade400),
+
                   child: const Icon(
                     Icons.notifications,
                     size: 20,
@@ -166,10 +175,7 @@ class HomeScreen extends StatelessWidget {
                     width: 40,
                     alignment: Alignment.center,
                     // ignore: prefer_const_literals_to_create_immutables
-                    decoration: BoxDecoration(boxShadow: [
-                      const BoxShadow(
-                          blurRadius: 7, spreadRadius: 3, color: Colors.pink)
-                    ], shape: BoxShape.circle, color: Colors.pink.shade400),
+
 
                     //logout button
                     child: IconButton(
@@ -229,7 +235,7 @@ class HomeScreen extends StatelessWidget {
                         imageUrl: movie.imagePath,
                         name: movie.name,
                         information:
-                            '${movie.year} | ${movie.category} | ${movie.category} | ${movie.category} | ${movie.duration.inHours}h ${movie.duration.inMinutes.remainder(60)}m'),
+                            '${movie.year} | ${movie.category} |   ${movie.duration.inHours}h ${movie.duration.inMinutes.remainder(60)}m'),
                   ),
               ],
             ),

@@ -151,72 +151,78 @@ class _MyRegisterState extends State<MyRegister> {
                             const SizedBox(
                               height: 40,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Text(
-                                  'Sign Up',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 27,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                CircleAvatar(
-                                  radius: 30,
-                                  backgroundColor: const Color(0xff4c505b),
-                                  child: IconButton(
-                                      color: Colors.white,
-                                      onPressed: () {},
-                                      icon: const Icon(
-                                        Icons.arrow_forward,
-                                      )),
-                                )
-                              ],
-                            ),
+                            // Row(
+                            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            //   children: [
+                            //     const Text(
+                            //       'Sign Up',
+                            //       style: TextStyle(
+                            //           color: Colors.white,
+                            //           fontSize: 27,
+                            //           fontWeight: FontWeight.w700),
+                            //     ),
+                            //     CircleAvatar(
+                            //       radius: 30,
+                            //       backgroundColor: const Color(0xff4c505b),
+                            //       child: IconButton(
+                            //           color: Colors.white,
+                            //           onPressed: () {},
+                            //           icon: const Icon(
+                            //             Icons.arrow_forward,
+                            //           )),
+                            //     )
+                            //   ],
+                            // ),
                             const SizedBox(
                               height: 40,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                TextButton(
-                                  onPressed: () async {
-                                    setState(() {
-                                      show = true;
-                                    });
-                                    try {
-                                      final user = await _auth
-                                          .createUserWithEmailAndPassword(
-                                              email: email, password: pass);
-                                      if (user != null) {
-                                        // ignore: use_build_context_synchronously
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                   HomeScreen()),
-                                        );
-                                      }
-                                    } catch (e) {
-                                      print(e);
-                                    }
-                                    setState(() {
-                                      show = false;
-                                    });
+                                Center(
+                                  child: TextButton(
 
-                                    Navigator.pushNamed(context, 'login');
-                                  },
-                                //   style: const ButtonStyle(),
-                                //   child: const Text(
-                                //     'Sign In',
-                                //     textAlign: TextAlign.left,
-                                //     style: TextStyle(
-                                //         decoration: TextDecoration.underline,
-                                //         color: Colors.white,
-                                //         fontSize: 18),
-                                //   ),
-                                // ),
-                              // ],
+                                    onPressed: () async {
+                                      setState(() {
+                                        show = true;
+                                      });
+                                      try {
+                                        final user = await _auth
+                                            .createUserWithEmailAndPassword(
+                                                email: email, password: pass);
+                                        if (user != null) {
+                                          // ignore: use_build_context_synchronously
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                     HomeScreen()),
+                                          );
+                                        }
+                                      } catch (e) {
+                                        print(e);
+                                      }
+                                      setState(() {
+                                        show = false;
+                                      });
+
+                                      // ignore: use_build_context_synchronously
+                                      Navigator.pushNamed(context, 'login');
+                                    },
+                                    style: const ButtonStyle(
+
+                                    ),
+                                    child: const Text(
+                                      'SIGN IN',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          decoration: TextDecoration.underline,
+                                          color: Colors.white,
+                                          fontSize: 18),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             )
                           ],
                         ),

@@ -29,8 +29,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 31, 28, 28),
+      backgroundColor: Colors.black,
       appBar: AppBar(
+
         title: Text(
           'Login Page\t ',
           style: Theme.of(context).textTheme.headlineLarge!.copyWith(
@@ -67,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
         // ),
 
         flexibleSpace: ClipPath(
+
           clipper: _CustomClipper(),
           child: Container(
             height: 150,
@@ -83,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
             //     ),
           ),
         ),
+
       ),
 
       body: LoadingOverlay(
@@ -106,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                     fillColor:  const Color.fromARGB(239, 230, 7, 7),
                     filled: true,
-                    hintText: "PLease Enter Your Email",
+                    hintText: "Please Enter Your Email",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     )),
@@ -132,6 +135,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               TextFormField(
                 style: const TextStyle(color: Colors.black),
+                obscureText: true,
                 decoration: InputDecoration(
                     fillColor:const Color.fromARGB(239, 230, 7, 7),
                     filled: true,
